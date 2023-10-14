@@ -8,8 +8,8 @@ export default async function Home() {
 
   return (
     <>
-      <section>
-        <div className="flex justify-between">
+      <section className="pt-12">
+        <div className="flex justify-between mb-12">
           <InputBar />
           <Dropdown />
         </div>
