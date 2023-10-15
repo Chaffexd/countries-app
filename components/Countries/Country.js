@@ -9,9 +9,9 @@ const Country = ({
   countryFlagSVG,
   countryFlagPNG,
 }) => {
-    // this will give us the readble url
+  // this will give us the readble url
   const countrySlug = countryName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-
+  
   // this will format the population number
   const formattedPopulation = countryPopulation.toLocaleString();
 
