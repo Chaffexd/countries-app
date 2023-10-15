@@ -4,12 +4,11 @@ import { getAllCountries, getSingleCountry } from "@/helpers/api-util";
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // reads the route params
+  // this will always rely on the name of your folder [slug] or [id] [blogId] etc
   const { slug } = params;
   const unformattedSlug = slug.replace(/-/g, " ");
 
   const getCountryInfo = await getSingleCountry(unformattedSlug);
-
-  console.log(getCountryInfo)
 
   return {
     title: getCountryInfo[0].name.common
