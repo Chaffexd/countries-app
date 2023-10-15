@@ -15,11 +15,11 @@ const CountryGrid = ({ allCountries }) => {
         {allCountries.map((country) => (
           <Country 
             key={country.name.official}
-            countryName={country.name.official}
+            countryName={country.name.common}
             countryPopulation={country.population}
             countryRegion={country.region}
             countryCapital={country.capital}
-            countryFlagSVG={country.flags.psvg}
+            countryFlagSVG={country.flags.svg}
             countryFlagPNG={country.flags.png}
           />
         ))}
