@@ -4,12 +4,16 @@ import { getAllCountries, getSingleCountry } from "@/helpers/api-util";
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // reads the route params
-  const id = params.id;
-  const test = searchParams;
+  const { slug } = params;
+  const unformattedSlug = slug.replace(/-/g, " ");
 
-  console.log(id)
-  console.log(test)
+  const getCountryInfo = await getSingleCountry(unformattedSlug);
 
+  console.log(getCountryInfo)
+
+  return {
+    title: getCountryInfo[0].name.common
+  }
 }
 
 export async function generateStaticParams() {
