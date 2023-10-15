@@ -2,8 +2,6 @@ import Country from "./Country";
 
 const CountryGrid = ({ allCountries }) => {
 
-    // console.log(allCountries[0])
-
     // name = allCountries.name.official
     // population = allCountries.population
     // region = allCountries.region

@@ -23,6 +23,7 @@ const CountryDetailPage = async ({ params }) => {
   // this removes any hyphons
   const unformattedSlug = slug.replace(/-/g, " ");
 
+  // fetch the single country data using the slug
   const singleCountryData = await getSingleCountry(unformattedSlug);
 
   const countryFlag = singleCountryData[0].flags.svg;

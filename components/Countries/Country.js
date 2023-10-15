@@ -10,7 +10,7 @@ const Country = ({
   countryFlagPNG,
 }) => {
   // this will give us the readble url
-  const countrySlug = countryName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const countrySlug = countryName.toLowerCase().replace(/[^a-z0-9À-ÿ]+/g, "-");
   
   // this will format the population number
   const formattedPopulation = countryPopulation.toLocaleString();
@@ -23,7 +23,7 @@ const Country = ({
           width={300}
           height={200}
           alt={`The national flag of ${countryName}`}
-          className="rounded-t-lg w-full h-44 object-fill"
+          className="rounded-t-lg w-full h-44 object-cover"
         />
         <div className="p-4 h-40">
           <h1 className="font-bold">{countryName}</h1>

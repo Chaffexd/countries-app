@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Borders from "./Borders";
 
 const CountryDetail = ({
   countryFlag,
@@ -12,7 +13,7 @@ const CountryDetail = ({
   countryTopLevelDomain,
   countryCurrencies,
   countryLanguages,
-  countryBorders
+  countryBorders,
 }) => {
   const currencyCode = Object.keys(countryCurrencies).map((code) => ({
     code,
@@ -28,8 +29,6 @@ const CountryDetail = ({
   // console.log(languages.map((lang) => lang.name));
   // prints: [ 'German', 'French', 'Dutch' ]
   const formattedLanguages = languages.map((lang) => lang.name).join(', ');
-
-  console.log(countryBorders)
 
   return (
     <>
@@ -69,7 +68,7 @@ const CountryDetail = ({
             </p>
           </div>
         </div>
-        <p>Border countries: </p>
+        <p>Border countries: {countryBorders && countryBorders.length > 0 && (<Borders countryBorders={countryBorders} countryName={countryName}  />)}</p>
       </div>
     </>
   );
