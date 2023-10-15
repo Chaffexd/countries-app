@@ -17,7 +17,7 @@ const Country = ({
 
   return (
     <Link href={`/country/${countrySlug}`}>
-      <li className="shadow-lg rounded-lg">
+      <li className="shadow-lg rounded-lg dark:bg-gray-700 dark:text-white">
         <Image
           src={countryFlagSVG || countryFlagPNG}
           width={300}

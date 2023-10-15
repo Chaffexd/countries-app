@@ -35,10 +35,10 @@ const CountryDetail = ({
       <div className="w-1/2">
         <Image src={countryFlag} alt={countryAlt} width={550} height={550} className="w-5/6 h-96" />
       </div>
-      <div className="p-8 w-1/2 flex flex-col justify-around">
+      <div className="p-8 w-1/2 flex flex-col justify-around dark:text-white">
         <h1 className="font-bold">{countryName}</h1>
         <div className="flex justify-between">
-          <div>
+          <div className="">
             <p className="mb-2">
               <span>Native Name:</span> {nativeName}
             </p>
@@ -68,7 +68,7 @@ const CountryDetail = ({
             </p>
           </div>
         </div>
-        <p>Border countries: {countryBorders && countryBorders.length > 0 && (<Borders countryBorders={countryBorders} countryName={countryName}  />)}</p>
+        <p>Border countries: {countryBorders && countryBorders.length > 0 && (<Borders countryBorders={countryBorders} />)}</p>
       </div>
     </>
   );

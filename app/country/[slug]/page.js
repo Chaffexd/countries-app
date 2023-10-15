@@ -2,6 +2,16 @@ import CountryDetail from "@/components/Countries/CountryDetail";
 import Button from "@/components/UI/Button";
 import { getAllCountries, getSingleCountry } from "@/helpers/api-util";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  // reads the route params
+  const id = params.id;
+  const test = searchParams;
+
+  console.log(id)
+  console.log(test)
+
+}
+
 export async function generateStaticParams() {
   const allCountryData = await getAllCountries();
 
@@ -16,7 +26,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const CountryDetailPage = async ({ params }) => {
+const CountryDetailPage = async ({ params, searchParams }) => {
   // returns country-name, in that format
   const { slug } = params;
 
@@ -40,22 +50,22 @@ const CountryDetailPage = async ({ params }) => {
   const countryBorders = singleCountryData[0].borders;
 
   return (
-    <article className="pt-12">
+    <article className="pt-12 pb-32">
       <Button />
       <div className="flex gap-8">
-        <CountryDetail 
-            countryFlag={countryFlag}
-            countryAlt={countryAlt}
-            countryName={countryName}
-            nativeName={nativeName}
-            countryPopulation={countryPopulation}
-            countryRegion={countryRegion}
-            countrySubRegion={countrySubRegion}
-            countryCapital={countryCapital}
-            countryTopLevelDomain={countryTopLevelDomain}
-            countryCurrencies={countryCurrencies}
-            countryLanguages={countryLanguages}
-            countryBorders={countryBorders}
+        <CountryDetail
+          countryFlag={countryFlag}
+          countryAlt={countryAlt}
+          countryName={countryName}
+          nativeName={nativeName}
+          countryPopulation={countryPopulation}
+          countryRegion={countryRegion}
+          countrySubRegion={countrySubRegion}
+          countryCapital={countryCapital}
+          countryTopLevelDomain={countryTopLevelDomain}
+          countryCurrencies={countryCurrencies}
+          countryLanguages={countryLanguages}
+          countryBorders={countryBorders}
         />
       </div>
     </article>

@@ -23,7 +23,7 @@ const InputBar = ({ onSearch }) => {
           id="input"
           name="input"
           placeholder="Search for a country..."
-          className="pl-12 shadow-lg rounded-md p-4 w-full"
+          className="pl-12 shadow-lg rounded-md p-4 w-full dark:bg-gray-700 dark:placeholder-white"
           value={query}
           onChange={handleInputChange}
         />

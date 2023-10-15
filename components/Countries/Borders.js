@@ -1,13 +1,7 @@
 import Link from "next/link";
 const iso = require('iso-3166-1');
 
-const Borders = ({ countryBorders, countryName }) => {
-  console.log(countryBorders, countryName);
-
-  const borderURL = countryName.replace(/ /g, "-").toLowerCase();
-  console.log(borderURL);
-
-    console.log(iso.whereAlpha3("FRA"))
+const Borders = ({ countryBorders }) => {
 
   return (
     <>
@@ -15,7 +9,7 @@ const Borders = ({ countryBorders, countryName }) => {
         <Link
           key={border}
           href={`/country/${iso.whereAlpha3(border).country.replace(/ /g, "-")}`}
-          className="shadow-xl p-2 ml-4"
+          className="shadow-xl p-2 ml-4 rounded-sm dark:bg-gray-700"
         >
           <span>{border}</span>
         </Link>
