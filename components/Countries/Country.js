@@ -18,7 +18,7 @@ const Country = ({
 
   return (
     <Link href={`/country/${countrySlug}`}>
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true}} >
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true}} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} >
         <li className="shadow-lg rounded-lg dark:bg-gray-700 dark:text-white">
           <Image
             src={countryFlagSVG || countryFlagPNG}
