@@ -1,5 +1,8 @@
+"use client"; 
+
 import Image from "next/image";
 import Borders from "./Borders";
+import { motion } from "framer-motion";
 
 const CountryDetail = ({
   countryFlag,
@@ -31,9 +34,9 @@ const CountryDetail = ({
   const formattedLanguages = languages.map((lang) => lang.name).join(', ');
 
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="w-full flex">
       <div className="w-1/2">
-        <Image src={countryFlag} alt={countryAlt} width={550} height={550} className="w-5/6 h-96" />
+        <Image src={countryFlag} alt={countryAlt || `The flag of ${countryName}`} width={550} height={550} className="w-5/6 h-96" />
       </div>
       <div className="p-8 w-1/2 flex flex-col justify-around dark:text-white">
         <h1 className="font-bold">{countryName}</h1>
@@ -68,9 +71,9 @@ const CountryDetail = ({
             </p>
           </div>
         </div>
-        <p>Border countries: {countryBorders && countryBorders.length > 0 && (<Borders countryBorders={countryBorders} />)}</p>
+        <p>Border countries: {countryBorders && countryBorders.length > 0 ? (<Borders countryBorders={countryBorders} />) : "No border countries"}</p>
       </div>
-    </>
+    </motion.div>
   );
 };
 
