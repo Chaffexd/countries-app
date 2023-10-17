@@ -2,7 +2,7 @@ import CountryDetail from "@/components/Countries/CountryDetail";
 import Button from "@/components/UI/Button";
 import { getAllCountries, getSingleCountry } from "@/helpers/api-util";
 
-export async function generateMetadata({ params, searchParams }, parent) {
+export async function generateMetadata({ params }) {
   // reads the route params
   // this will always rely on the name of your folder [slug] or [id] [blogId] etc
   const { slug } = params;
@@ -29,7 +29,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const CountryDetailPage = async ({ params, searchParams }) => {
+const CountryDetailPage = async ({ params }) => {
   // returns country-name, in that format
   const { slug } = params;
 

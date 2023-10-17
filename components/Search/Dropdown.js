@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import ChevronUp from "../Icons/ChevronUp";
 
 const Dropdown = ({ onSelectRegion, region }) => {

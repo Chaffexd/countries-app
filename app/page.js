@@ -33,7 +33,6 @@ export default function Home() {
     // setSearchResults(filteredResults);
 
     const filteredResults = filterCountries(allCountries, region, query);
-    console.log(filteredResults)
 
     setSearchResults(filteredResults);
   };
