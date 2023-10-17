@@ -9,7 +9,7 @@ const CountryGrid = ({ allCountries }) => {
 
   return (
     <div>
-      <ul className="grid grid-cols-4 gap-12">
+      <ul className="grid grid-cols-1 lg:grid-cols-4 gap-12">
         {allCountries.map((country) => (
           <Country 
             key={country.name.official}

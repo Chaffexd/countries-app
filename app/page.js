@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <>
       <section className="pt-12 dark:bg-gray-800">
-        <div className="flex justify-between mb-12">
+        <div className="lg:flex justify-between mb-12">
           <InputBar onSearch={handleSearch} />
           <Dropdown onSelectRegion={setRegion} region={region} />
         </div>

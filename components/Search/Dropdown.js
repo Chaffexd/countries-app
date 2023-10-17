@@ -41,7 +41,7 @@ const Dropdown = ({ onSelectRegion, region }) => {
   }
 
   return (
-    <motion.div whileTap={{ scale: 0.9 }} className="shadow-lg rounded-md p-4 w-1/5 bg-white relative dark:bg-gray-700 dark:text-white">
+    <motion.div whileTap={{ scale: 0.9 }} className="shadow-lg rounded-md p-4 lg:w-1/5 w-4/5 bg-white relative dark:bg-gray-700 dark:text-white">
       <button  className="flex justify-between w-full dark:bg-gray-700 dark:text-white" onClick={toggleDropdown}>
         {region ? region : "Filter by Region"} <ChevronUp isOpen={isOpen} />
       </button>

@@ -12,7 +12,7 @@ const InputBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="relative w-3/5">
+    <div className="relative w-full lg:w-3/5">
       <label htmlFor="input"></label>
       <div className="flex">
         <i className="absolute inset-y-0 left-0 pl-3 flex items-center">
