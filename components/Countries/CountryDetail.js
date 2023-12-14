@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import Image from "next/image";
 import Borders from "./Borders";
@@ -31,12 +31,23 @@ const CountryDetail = ({
   }));
   // console.log(languages.map((lang) => lang.name));
   // prints: [ 'German', 'French', 'Dutch' ]
-  const formattedLanguages = languages.map((lang) => lang.name).join(', ');
+  const formattedLanguages = languages.map((lang) => lang.name).join(", ");
 
   return (
-    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="w-full lg:flex lg:flex-row flex flex-col">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="w-full lg:flex xl:flex-row flex flex-col lg:flex-col lg:items-center"
+    >
       <div className="lg:w-1/2 w-full">
-        <Image src={countryFlag} alt={countryAlt || `The flag of ${countryName}`} width={550} height={550} className="lg:w-5/6 w-full lg:h-96 h-62" />
+        <Image
+          src={countryFlag}
+          alt={countryAlt || `The flag of ${countryName}`}
+          width={550}
+          height={550}
+          className="lg:w-5/6 max-w-3xl sm:w-full w-full lg:h-96 h-62"
+        />
       </div>
       <div className="lg:p-8 pt-8 lg:w-1/2 w-full flex flex-col justify-around dark:text-white">
         <h1 className="font-bold">{countryName}</h1>
@@ -71,7 +82,14 @@ const CountryDetail = ({
             </p>
           </div>
         </div>
-        <p className="flex items-center flex-wrap">Border countries: {countryBorders && countryBorders.length > 0 ? (<Borders countryBorders={countryBorders} />) : "No border countries"}</p>
+        <p className="flex items-center flex-wrap">
+          Border countries:{" "}
+          {countryBorders && countryBorders.length > 0 ? (
+            <Borders countryBorders={countryBorders} />
+          ) : (
+            "No border countries"
+          )}
+        </p>
       </div>
     </motion.div>
   );
